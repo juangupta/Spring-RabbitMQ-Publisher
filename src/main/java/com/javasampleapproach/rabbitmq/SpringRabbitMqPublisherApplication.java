@@ -45,7 +45,9 @@ public class SpringRabbitMqPublisherApplication {
         //connectionFactory.setPassword("Edpyme");
         try {
 			//connectionFactory.setUri("amqp://juagomez:vinula@localhost:5672");
-        	connectionFactory.setUri("amqps://admin:HFZRGNULUDSCNDYT@portal-ssl1333-9.bmix-dal-yp-c0f0e752-d6b2-43bc-8be6-1d26c74f82ad.2126222060.composedb.com:51048/bmix-dal-yp-c0f0e752-d6b2-43bc-8be6-1d26c74f82ad");
+        	//*******RabbitMQ-DEV
+            connectionFactory.setUri("amqps://admin:SNMYSCACWOLMHZHS@portal-ssl1233-20.bmix-dal-yp-eccd01e7-4f3d-4c90-bc67-220feeeb8e46.2126222060.composedb.com:54907/bmix-dal-yp-eccd01e7-4f3d-4c90-bc67-220feeeb8e46");
+        	//connectionFactory.setUri("amqp://ifyrtjsc:F9fttMFgJ1_RUJX6d4DIvn9TyQiNmiR8@chimpanzee.rmq.cloudamqp.com/ifyrtjsc");        	
         	//connectionFactory.setUri("amqp://Edpyme@portal-ssl1333-9.bmix-dal-yp-c0f0e752-d6b2-43bc-8be6-1d26c74f82ad.2126222060.composedb.com:51048/bmix-dal-yp-c0f0e752-d6b2-43bc-8be6-1d26c74f82ad");
 		} catch (KeyManagementException e) {
 			// TODO Auto-generated catch block
@@ -57,7 +59,7 @@ public class SpringRabbitMqPublisherApplication {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		connectionFactory.setConnectionTimeout(30000);
+		connectionFactory.setConnectionTimeout(3000);
         return connectionFactory;
     }
 	

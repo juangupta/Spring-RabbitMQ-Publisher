@@ -43,14 +43,14 @@ public class fileProccessRoute extends RouteBuilder {
 		.end()
 		.log("Fin");	     
 		
-		from("seda:split?concurrentConsumers=500")
+		from("seda:split?concurrentConsumers=400")
 		//from("direct:split")
 		//.log("total: ${property.CamelSplitSize}")
 		 .setExchangePattern(ExchangePattern.InOnly)
 		 .setHeader("rabbitmq.CONTENT_ENCODING", constant("UTF-8"))
 		 .setHeader("rabbitmq.CONTENT_TYPE", constant("text/plain"))
 		 //.to("rabbitmq://amq.direct?connectionFactory=#connectionFactory&autoDelete=false&routingKey=jggtest&declare=false&channelPoolMaxSize=500");
-		 .to("rabbitmq://amq.direct?connectionFactory=#connectionFactory&autoDelete=false&declare=false&channelPoolMaxSize=500");
+		 .to("rabbitmq://jgg.direct?connectionFactory=#connectionFactory&autoDelete=false&declare=false&channelPoolMaxSize=400");
 		//toBean("publisher.produceMsg");
 		
 	}
